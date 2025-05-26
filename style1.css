@@ -1,0 +1,43 @@
+* {
+  margin: 0;
+  font-family: Arial;
+  border: border-box;
+}
+.top-color {
+  height: 50px;
+  background-color: #cc0000;
+  color: white;
+  /* display: flex; */
+  align-items: center;
+  justify-content: space-evenly;
+}
+.location{
+    height: 15px;
+    display: flex;
+}
+.top-bar {
+    background-image: url("location-icon-white-png-10.jpg");
+    height: 15px;
+    width: 15px;
+
+
+}
+.border{
+    border: 2px solid transparent;
+}
+.border:hover{
+    border: 2px solid white;
+}
+.left-location {
+  background-color: white;
+  font-size: 0.85rem;
+  display: flex;
+}
+.navbar {
+  height: 60px;
+  background-color: #ffffff;
+  color: black;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
