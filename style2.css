@@ -469,31 +469,33 @@
   color: #333;
   font-weight: 500;
 }
+/* --- Footer Styling - Target Replication (NO LAST BAR) --- */
+
 .main-footer {
-  background-color: #f7f7f7;
-  padding: 30px 0 100px;
+  background-color: #f7f7f7; /* Light gray background */
+  padding: 30px 0 100px; /* Adjust bottom padding as the last bar is gone */
   width: 100vw;
-  color: #333;
+  color: #333; /* Default text color */
   font-size: 0.85rem;
 }
 
 .footer-content-wrapper {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 20px;
+  max-width: 1200px; /* Aligns with your main content width */
+  margin: 0 auto; /* Centers the footer content */
+  padding: 0 20px; /* Padding on the sides for smaller screens */
 }
 
 .footer-top-links {
   display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 30px;
-  padding-bottom: 40px;
+  justify-content: space-between; /* Distribute columns evenly */
+  flex-wrap: wrap; /* Allow columns to wrap */
+  gap: 30px; /* Space between columns, adjusts on wrap */
+  padding-bottom: 40px; /* Space above the middle logo section */
 }
 
 .footer-column {
-  flex: 1 1 200px;
-  min-width: 180px;
+  flex: 1 1 200px; /* Grow, shrink, and base width for columns */
+  min-width: 180px; /* Ensures columns don't get too small before wrapping */
 }
 
 .footer-column h4 {
@@ -511,77 +513,92 @@
 }
 
 .footer-column ul li {
-  margin-bottom: 8px;
+  margin-bottom: 8px; /* Space between list items */
 }
 
 .footer-column ul li a {
-  color: #555;
+  color: #555; /* Slightly darker gray for links */
   text-decoration: none;
   font-size: 0.85rem;
   transition: color 0.2s ease;
-  display: flex;
-  align-items: center;
+  display: flex; /* Make links flex to align icon and text */
+  align-items: center; /* Vertically align icon and text */
 }
 
 .footer-column ul li a:hover {
-  color: #cc0000;
+  color: #cc0000; /* Target red on hover */
 }
 
 .footer-column.with-icons ul li a i {
-  margin-right: 8px;
-  font-size: 1rem;
-  color: #777;
+  margin-right: 8px; /* Space between icon and text */
+  font-size: 1rem; /* Adjust icon size */
+  color: #777; /* Default icon color */
 }
 
 .footer-column ul li a:hover i {
-  color: #cc0000;
+  color: #cc0000; /* Icon color on hover */
 }
 
+/* --- Middle Logo Section --- */
 .footer-middle-logo {
   text-align: center;
-  padding: 20px 0 0;
+  padding: 20px 0 0; /* Padding around the logo and text */
+  position: relative; /* For absolute positioning of graphic */
+  overflow: hidden; /* Hide overflowing parts of the graphic */
+  height: 180px; /* Adjust height to accommodate logo and graphic */
+}
+
+.footer-middle-logo img:first-child {
+  /* Target logo */
+  display: block; /* To center it with margin auto */
+  margin: 0 auto 10px; /* Center logo, add space below */
+  z-index: 2; /* Ensure logo is above graphic */
+  position: relative;
+}
+
+.footer-middle-logo p {
+  font-size: 0.9rem;
+  font-weight: bold;
+  color: #666;
+  margin-bottom: 20px;
+  z-index: 2;
+  position: relative;
+}
+
+.footer-middle-logo .city-graphic {
+  position: absolute;
+  bottom: -10px; /* Adjust to position the graphic */
+  left: 50%;
+  transform: translateX(-50%); /* Center horizontally */
+  max-width: 100%; /* Ensure graphic doesn't overflow */
   height: auto;
-  overflow: hidden;
-  margin-bottom: -8.5%;
+  z-index: 1; /* Place graphic behind logo/text */
+  opacity: 0.8; /* Slight transparency for graphic */
 }
 
-.footer-middle-logo .footer-combined-graphic {
-  display: block;
-  margin: 0 auto;
-  max-width: 100%;
-  width: 562px;
-  height: 212px;
-}
-
+/* --- Media Queries for Responsiveness --- */
 @media (max-width: 900px) {
   .footer-top-links {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
+    flex-direction: column; /* Stack columns */
+    align-items: center; /* Center columns */
+    text-align: center; /* Center text within columns */
     gap: 20px;
   }
 
   .footer-column {
-    width: 100%;
+    width: 100%; /* Full width when stacked */
     text-align: center;
   }
 
   .footer-column ul li a {
-    justify-content: center;
+    justify-content: center; /* Center icon+text links when column is centered */
   }
 
   .footer-middle-logo {
-    height: auto;
-    padding: 15px 0;
+    height: 150px; /* Adjust height for smaller screens */
   }
 
-  .footer-middle-logo .footer-combined-graphic {
-    display: block;
-    margin: 0 auto;
-    background-image: cover;
-    max-width: 100%;
-    width: 562px;
-    height: 212px;
-    object-fit: contain;
+  .footer-middle-logo .city-graphic {
+    bottom: -5px; /* Adjust graphic position */
   }
 }
